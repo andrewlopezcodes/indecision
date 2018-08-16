@@ -46,44 +46,45 @@ class Options extends React.Component{
   render(){
     return (
       <div>
+        <button onClick={this.handleRemoveAll}>Remove All</button>
         {
           this.props.options.map((index)=> <Option key={index} optionText={index} />)
         }
-        <button onClick={this.handleRemoveAll}>Remove All</button>
+
       </div>
-    )
+    );
   }
 }
 
 class Option extends React.Component{
+  render(){
+    return(
+      <div>
+        {this.props.optionText}
+      </div>
+    );
+  }
+}
+
+
+class AddOption extends React.Component{
   handleAddOption(e){
     e.preventDefault();
 
-    const option = e.target.elements.option.value;
+    const option = e.target.elements.option.value.trim();
     if (option){
     alert(option);
   }
 }
   render(){
-    return(
+    return (
       <div>
         <form onSubmit={this.handleAddOption}>
           <input type="text" name='option'/>
             <button>Add Option</button>
         </form>
       </div>
-    )
-  }
-}
-
-
-class AddOption extends React.Component{
-  render(){
-    return (
-      <div>
-        <p>AddOption component here</p>
-      </div>
-    )
+    );
   }
 }
 
