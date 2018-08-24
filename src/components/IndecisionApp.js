@@ -9,6 +9,28 @@ class IndecisionApp extends React.Component{
   state ={
     options: []
   }
+  handleDeleteOptions =()=>{
+    this.setState(()=>( { options: [] } ));
+  };
+
+  handleDeleteOption = (optionToRemove)=>{
+    this.setState((prevState)=>({ options: prevState.options.filter((option)=> optionToRemove !== option)
+    }));
+  };
+
+  handlePick =()=>{
+    const numberRandom = Math.floor(Math.random()*this.state.options.length);
+    alert(this.state.options[numberRandom]);
+  };
+
+  handleAddOption =(option)=>{
+    if(!option){
+      return 'Enter Valid Value To Add Item';
+    } else if (this.state.options.indexOf(option) > -1){
+      return 'This option already exists'
+    }
+    this.setState((prevState)=>({ options: prevState.options.concat(option) }));
+  };
 
   componentDidMount(){
 
@@ -35,30 +57,6 @@ class IndecisionApp extends React.Component{
     console.log('componentWillUnmount')
   }
 
-
-  handleDeleteOptions =()=>{
-    this.setState(()=>( { options: [] } ));
-  }
-
-  handleDeleteOption = (optionToRemove)=>{
-    this.setState((prevState)=>({ options: prevState.options.filter((option)=> optionToRemove !== option)
-    }));
-  }
-
-  handlePick =()=>{
-    const numberRandom = Math.floor(Math.random()*this.state.options.length);
-    alert(this.state.options[numberRandom]);
-  }
-
-  handleAddOption =(option)=>{
-    if(!option){
-      return 'Enter Valid Value To Add Item';
-    } else if (this.state.options.indexOf(option) > -1){
-      return 'This option already exists'
-    }
-    this.setState((prevState)=>({ options: prevState.options.concat(option) }));
-
-  }
 
   render(){
 
