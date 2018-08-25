@@ -1,0 +1,54 @@
+//widget
+.widget{
+  background: $light-blue;
+}
+
+//widget header
+.widget-header{
+  background: $blue;
+  color: $off-white;
+  padding: $medium-size;
+  display: flex;
+  justify-content: space-between;
+}
+
+.widget-header h3{
+  margin: 0;
+}
+
+.widget-option{
+  color: white;
+  border-bottom: .3rem solid lighten($light-blue, 10%);
+  padding: $medium-size;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.widget-error-message{
+  padding: 0 $small-size;
+  margin: $small-size 0 0 0;
+  color: $off-white;
+  font-style: italic;
+}
+
+.widget-form{
+  background: $light-blue;
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0 0 10% 0;
+}
+
+.widget-input{
+  background-color: $dark-blue;
+  border-bottom: .3rem solid darken($dark-blue, 10%);
+  flex-grow: 1;
+  margin-right: $small-size;
+  color: white;
+  padding: $small-size;
+}
