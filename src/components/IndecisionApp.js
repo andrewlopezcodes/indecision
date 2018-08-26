@@ -5,6 +5,7 @@ import Options from './Options';
 import Header from './Header';
 import Action from './Action';
 import OptionModal from './OptionModal';
+import Signature from './Signature';
 
 class IndecisionApp extends React.Component{
   state ={
@@ -87,6 +88,9 @@ class IndecisionApp extends React.Component{
           selectedOption ={this.state.selectedOption}
           handleCloseModal={this.handleCloseModal}
         />
+        
+        <Signature />
+
       </div>
     );
   }
