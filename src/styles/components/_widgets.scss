@@ -36,9 +36,10 @@
 }
 
 .widget-form{
+  position: static;
   background: $light-blue;
-  padding: 10px;
-  display: flex;
+  padding: $small-size;
+  display: block;
   text-align: center;
   font-size: 2rem;
   font-weight: 500;
@@ -47,9 +48,26 @@
 
 .widget-input{
   background-color: $dark-blue;
+  border: none;
   border-bottom: .3rem solid darken($dark-blue, 10%);
-  flex-grow: 1;
-  margin-right: $small-size;
+  margin-right: 100px;
   color: white;
   padding: $small-size;
+}
+
+@media (max-width: $desktop-breakpoint){
+  .widget-option{
+    font-size: 15px;
+  }
+  .widget-form{
+    flex-direction: row;
+    margin-right: auto;
+  }
+  .widget-input{
+    max-width: 200px;
+    margin: 0 auto;
+    flex-shrink: 1;
+    margin-bottom: 5px;
+  }
+
 }

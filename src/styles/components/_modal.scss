@@ -22,7 +22,7 @@
   color: white;
   max-width: 30rem;
   outline: none;
-  padding: $large-size;
+  padding: $medium-size;
   text-align: center;
 
 }
@@ -36,4 +36,10 @@ margin: 0 0 $large-size 0;
   font-size: 2em;
   font-weight: 300;
   word-break: break-all;
+}
+
+@media(max-width: $desktop-breakpoint){
+  .modal__body{
+      font-size: 1em;
+  }
 }
